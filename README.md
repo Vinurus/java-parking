@@ -55,7 +55,7 @@ List<Vehicle> trafficJam = generator.generateScenario(
     )
 );
 ```
-The Generator demonstrates excellent use of design patterns including Factory Pattern and Stream API for clean, maintainable code! 🎯
+The Generator demonstrates excellent use of design patterns including Factory Pattern and Stream API for clean, maintainable code! 
 
 ## What I learned
 
