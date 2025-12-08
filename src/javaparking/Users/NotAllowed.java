@@ -1,4 +1,4 @@
-package javaparking.Vehicles;
+package javaparking.Users;
 
 public interface NotAllowed {
 }

@@ -1,16 +1,16 @@
-package javaparking.Vehicles;
+package javaparking.Users;
 
-public abstract class Vehicle {
+public abstract class User {
     protected boolean isAnonymous = false;
     protected boolean takeSpace = false;
 
     protected String identifier;
 
-    public Vehicle() {
+    public User() {
         this.isAnonymous = true;
     }
 
-    public Vehicle(String identifier) {
+    public User(String identifier) {
         this.identifier = identifier;
     }
 

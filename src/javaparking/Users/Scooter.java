@@ -1,6 +1,6 @@
-package javaparking.Vehicles;
+package javaparking.Users;
 
-public class Scooter extends Vehicle{
+public class Scooter extends User {
 
 
     public Scooter() {

@@ -1,6 +1,6 @@
 package javaparking;
 
-import javaparking.Vehicles.*;
+import javaparking.Users.*;
 
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
@@ -27,13 +27,13 @@ public class ParkingLot {
 
 
     private String [] blackList;
-    private ArrayList<Vehicle> lot = new ArrayList<>();
+    private ArrayList<User> lot = new ArrayList<>();
 
     public ParkingLot(String [] blackList){
         this.blackList = blackList;
     }
 
-    public void letIn(Vehicle user) {
+    public void letIn(User user) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
         String name = user.identify();
@@ -69,16 +69,19 @@ public class ParkingLot {
                 System.out.println(name + " is entering at " + now);
                 lot.add(user);
                 carCount++;
+                return;
             }
             case Bike bike when bikeCount < MAX_AVAILABLE_BIKE_SPACES -> {
                 System.out.println(name + " is entering at " + now);
                 lot.add(user);
                 bikeCount++;
+                return;
             }
             case Motorbike motorbike when motorbikeCount < MAX_AVAILABLE_MOTORBIKE_SPACES -> {
                 System.out.println(name + " is entering at " + now);
                 lot.add(user);
                 motorbikeCount++;
+                return;
             }
             default -> {
                 System.out.println("No available spaces. " + name + " is returned at " + now);
@@ -95,12 +98,9 @@ public class ParkingLot {
             totalAmount += prices.getOrDefault(type, 0);
             entrancesCount++;
 
-
-
-
     }
 
-    private boolean isBlackListed(Vehicle user){
+    private boolean isBlackListed(User user){
         if(user instanceof Car){
             for(String banned : blackList)
                 if(banned.equals(((Car) user).getPlate())) return true;

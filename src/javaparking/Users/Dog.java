@@ -1,6 +1,6 @@
-package javaparking.Vehicles;
+package javaparking.Users;
 
-public class Dog extends Vehicle implements NotAllowed{
+public class Dog extends User implements NotAllowed{
 
     public Dog(){
         super.isAnonymous = false;

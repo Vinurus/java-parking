@@ -1,6 +1,6 @@
-package javaparking.Vehicles;
+package javaparking.Users;
 
-public class Bike extends Vehicle {
+public class Bike extends User {
 
     public Bike() {
         super();

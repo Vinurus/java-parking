@@ -1,5 +1,5 @@
 package javaparking;
-import javaparking.Vehicles.*;
+import javaparking.Users.*;
 import java.util.List;
 
 
@@ -13,10 +13,10 @@ public class Main {
 
         ParkingLot lot = new ParkingLot(blacklist);
 
-        List<Vehicle> tt =  test.n(10);
+        List<User> tt =  test.n(10);
         // tt =  test.scenarioBasic();
 
-        for(Vehicle t : tt)
+        for(User t : tt)
             lot.letIn(t);
 
         lot.daySummary();

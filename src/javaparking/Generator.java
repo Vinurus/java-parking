@@ -1,6 +1,6 @@
 package javaparking;
 
-import javaparking.Vehicles.*;
+import javaparking.Users.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -10,7 +10,7 @@ import java.util.function.Supplier;
 public class Generator {
     private final Random random = new Random();
 
-    private final List<Supplier<Vehicle>> generator = List.of(
+    private final List<Supplier<User>> generator = List.of(
             () -> new Car(nextPlate(), randomBrand()),
             () -> new Car(nextPlate(),randomBrand(), randomColor()),
             () -> new Car(nextPlate(), randomName(), randomBrand(), randomColor()),
@@ -86,16 +86,16 @@ public class Generator {
     }
 
 
-    public Vehicle randomUser(){
+    public User randomUser(){
         int index = random.nextInt(generator.size());
         return generator.get(index).get();
     }
 
-    public List<Vehicle> generateScenario(Map<Class<? extends Vehicle>, Integer> scenario) {
-        List<Vehicle> result = new ArrayList<>();
+    public List<User> generateScenario(Map<Class<? extends User>, Integer> scenario) {
+        List<User> result = new ArrayList<>();
 
         for (var entry : scenario.entrySet()) {
-            Class<? extends Vehicle> type = entry.getKey();
+            Class<? extends User> type = entry.getKey();
             int count = entry.getValue();
 
             for (int i = 0; i < count; i++) {
@@ -104,8 +104,8 @@ public class Generator {
         }
         return result;
     }
-    private Vehicle randomOfType(Class<? extends Vehicle> type) {
-        List<Supplier<Vehicle>> filtered = generator.stream()
+    private User randomOfType(Class<? extends User> type) {
+        List<Supplier<User>> filtered = generator.stream()
                 .filter(s -> s.get().getClass() == type)
                 .toList();
 

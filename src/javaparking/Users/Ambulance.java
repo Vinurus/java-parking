@@ -1,6 +1,6 @@
-package javaparking.Vehicles;
+package javaparking.Users;
 
-public class Ambulance extends Vehicle implements EmergencyVehicle{
+public class Ambulance extends User implements EmergencyVehicle{
 
     private String plate;
 

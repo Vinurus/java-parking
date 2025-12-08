@@ -1,6 +1,6 @@
-package javaparking.Vehicles;
+package javaparking.Users;
 
-public class Motorbike extends Vehicle {
+public class Motorbike extends User {
 
     private String plate;
 

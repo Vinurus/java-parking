@@ -1,6 +1,6 @@
-package javaparking.Vehicles;
+package javaparking.Users;
 
-public class Tank extends Vehicle implements NotAllowed{
+public class Tank extends User implements NotAllowed{
 
     private String plate;
 

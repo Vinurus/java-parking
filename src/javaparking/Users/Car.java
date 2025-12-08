@@ -1,5 +1,5 @@
-package javaparking.Vehicles;
-public class Car extends Vehicle {
+package javaparking.Users;
+public class Car extends User {
     protected String plate, brand, color;
     protected boolean worker = false;
 
